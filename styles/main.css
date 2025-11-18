@@ -1,0 +1,224 @@
+/* --- 1. Configuración General y Fuente --- */
+body {
+    background: #047b86; 
+    font-family: Tahoma, Arial, sans-serif;
+    color: #000;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+/* --- Estilo para la Barra de Menú --- */
+.menu-bar {
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    background: #C0C0C0; 
+    display: flex;
+    border-bottom: 2px solid;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+}
+
+.menu-bar > li {
+    position: relative;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.menu-bar .menu-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #C0C0C0;
+    list-style: none;
+    margin: 0;
+    padding: 3px;
+    min-width: 150px; 
+    border: 2px outset;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    z-index: 10;
+}
+
+.menu-bar > li:hover .menu-dropdown {
+    display: block;
+}
+
+.menu-bar .menu-dropdown li {
+    padding: 3px 10px;
+}
+
+.menu-bar .menu-dropdown li:hover {
+    background: #000080; 
+    color: white;
+}
+
+
+/* --- 2. Estilo de "Ventana" (Contenedores) --- */
+.container,
+.modal-content,
+.container-table {
+    background: #C0C0C0; 
+    border: 2px solid;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    border-style: outset;
+    padding: 15px;
+}
+
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+}
+.container-table {
+    width: 96%;
+    margin: 20px auto;
+    min-width: 900px;
+}
+
+
+
+/* --- 3. Botones y Formularios --- */
+button,
+input[type="submit"],
+input[type="button"] {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #C0C0C0;
+    border: 2px outset;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    padding: 5px 12px;
+    cursor: pointer;
+    min-width: 80px; 
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+button:disabled,
+input:disabled {
+    border-style: inset;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-bottom-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+}
+
+
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #FFFFFF; 
+    border: 2px inset;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-bottom-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+    padding: 4px;
+    box-sizing: border-box; 
+}
+
+/* --- 4. La Tabla --- */
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 15px;
+}
+
+table th {
+    background: #C0C0C0;
+    border: 2px outset;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+    padding: 6px;
+    text-align: left;
+}
+
+table td {
+    border: 1px solid #808080; 
+    padding: 6px;
+}
+
+table tbody {
+    background: #FFFFE1; 
+}
+
+#table-body tr {
+    cursor: pointer;
+}
+#table-body tr:hover {
+    background-color: #FFFFB0; 
+}
+
+/* --- 5. El Modal (La Ventana Pop-up) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 0; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 0; 
+}
+
+#modal-titulo {
+    background: #000080; 
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+#form-persona {
+    padding: 15px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    background: #C0C0C0;
+    border: 1px outset;
+    border-color: #fff #808080 #808080 #fff;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    line-height: 18px; 
+    text-align: center;
+    cursor: pointer;
+    margin: 3px 3px 0 0;
+}
+.close-btn:active {
+    border-style: inset;
+    border-color: #808080 #fff #fff #808080;
+}
+
+#loader, #modal-loader {
+    font-style: italic;
+    padding: 10px 0;
+}
