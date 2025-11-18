@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario CRUD de Personas</h1>
+
+        <ul class="menu-bar">
+            <li>
+                <span><u>Ingresar</u></span>
+                <ul class="menu-dropdown">
+                    <li id="btn-nuevo">Nueva Persona...</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div id="loader" style="display: none;">Cargando...</div>
+        
+        <h2>Buscar Persona por ID</h2>
+        <form id="form-buscar">
+            <label class="form-label" for="buscar-id">ID de la Persona:</label>
+            <input class="form-control" type="number" id="buscar-id" placeholder="Escribe un ID..." required>
+            <button type="submit" class="botonguardar">Buscar</button>
+            <button type="button" id="btn-mostrar-todos" class="botonguardar">Mostrar Todos</button>
+        </form>
+
+    </div>
+
+    <div class="container-table">
+        <h2>Lista de Personas Registradas</h2>
+        
+        <div id="loader" style="display: none;">Cargando...</div>
+        
+        <table id="personas-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Sexo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="modal-persona" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-titulo">Agregar Persona</h2>
+
+            <form id="form-persona">
+
+                <input type="hidden" id="persona-id">
+
+                <label class="form-label" for="A1"> Nombre: </label>
+                <input class="form-control" name="nombre" type="text" id="A1" required>
+
+                <label class="form-label" for="A2"> Apellido: </label>
+                <input class="form-control" name="apellido" type="text" id="A2" required>
+
+                <div> 
+                    <input class="form-radio" type="radio" value="h" name="sexo" id="Rad_h" required>
+                    <label class="form-label" for="Rad_h">Hombre</label>
+                    <input class="form-radio" type="radio" value="m" name="sexo" id="Rad_m">
+                    <label class="form-label" for="Rad_m">Mujer</label>
+                    <input class="form-radio" type="radio" value="o" name="sexo" id="Rad_o">
+                    <label class="form-label" for="Rad_o">Otro</label>
+                </div>
+
+                <label class="form-label" for="nac">Fecha de nacimiento:</label>
+                <input class="form-control" name="fh_nac" type="date" id="nac" required>
+
+                <label class="form-label" for="rol">Escoge tu rol:</label>
+                <select class="form-select" name="id_rol" id="rol">
+                    <option value="1">Alumno</option>
+                    <option value="2">Profesor</option>
+                    <option value="3">Administrativo</option>
+                </select>
+
+                <button type="submit" class="botonguardar botonsi">Guardar</button>
+                <button type="button" id="btn-modal-delete" class="botonguardar boton-peligro">
+                    Borrar Persona</button>
+
+                <div id="modal-loader" style="display: none;">Guardando...</div>
+            </form>
+        </div>
+    </div>
+
+    <script src="crud.js"></script>
+</body>
+
+</html>
